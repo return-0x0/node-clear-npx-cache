@@ -1,4 +1,4 @@
-### Why you should clear your NPX cache?
+## Why you should clear your NPX cache?
 
 NPX has a bug. When you call, for example, one of this:
 
@@ -12,9 +12,17 @@ npx cowsay "I'm a cow!"
 npx new-typescript-module
 ```
 
-…then you will do it successfully. But NPX will install it to your NPX cache, and NPX will *not* be watching lifetime of its cache. NPX package will be stored in the cache forever. When NPX-utility updated, the cache will *not* be updated. I'll repeat, it's a bug. It is important: if you are developing a new NPX-package, you will test it. But you can publish a bugful package, and after a fix and re-publishing you will see same bug. I want you shall not repeat my expirience in bug-finding and source-code-jumping.
+…then you will do it successfully. But NPX will install it to your NPX cache, and NPX will *not* be watching lifetime of its cache. NPX package will be stored in the cache forever. When NPX-utility updated, the cache will *not* be updated. I'll repeat, it's a bug.
 
-### Usage
+### For users
+
+If you sometimes use a NPX-utility, you shall store in your cache an old version of this package. And every package update will *not* be seen by NPX. Cache clearing will solve this trouble.
+
+### For developers
+
+If you are developing a new NPX-package, you will test it. But you can publish a bugful package, and after a fix and re-publishing you will see same bug. I want you shall not repeat my expirience in bug-finding and source-code-jumping.
+
+## Usage
 
 ```sh
 npx clear-npx-cache
