@@ -1,0 +1,36 @@
+{
+  "name": "clear-npx-cache",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "description": "Clears your NPX cache.",
+  "keywords": [
+    "npm",
+    "npx",
+    "cache",
+    "management",
+    "utility"
+  ],
+  "author": "retueze",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/return-0x0/node-clear-npx-cache"
+  },
+  "bin": {
+    "clear-npx-cache": "bin/clear-npx-cache.js"
+  },
+  "scripts": {
+    "lint": "eslint",
+    "buildTsDev": "tsc -p tsconfig.dev.json",
+    "buildDev": "npm run buildTsDev",
+    "buildTsProd": "tsc -p tsconfig.prod.json",
+    "buildProd": "npm run buildTsProd",
+    "prepare": "del /q lib && del /q types && npm run buildProd"
+  },
+  "devDependencies": {
+    "@types/node": "^15.0.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "typescript": "^4.2.4"
+  }
+}

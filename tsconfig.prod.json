@@ -1,0 +1,14 @@
+{
+    "src": ["src/**/*.ts"],
+    "compilerOptions": {
+    	"outDir": "lib",
+    	"target": "es5",
+    	"module": "commonjs",
+    	"moduleResolution": "node",
+    	"lib": ["es2020", "dom"],
+    	"declaration": true,
+    	"declarationDir": "types",
+    	"strict": true,
+		"esModuleInterop": true
+    }
+}
