@@ -12,11 +12,11 @@ npx cowsay "I'm a cow!"
 npx new-typescript-module
 ```
 
-…then you will do it successfully. But NPX will install it to your NPX cache, and NPX will *not* be watching lifetime of its cache. NPX package will be stored in the cache forever. When NPX-utility updated, the cache will *not* be updated. I'll repeat, it's a bug.
+…then you will do it successfully. But NPX will install it to your NPX cache, and NPX will *not* be watching lifetime of its cache. NPX package will be stored in the cache forever. When NPX-utility was updated, the cache will *not* be updated. I'll repeat, it's a bug.
 
 ### For users
 
-If you sometimes use a NPX-utility, you shall store in your cache an old version of this package. And every package update will *not* be seen by NPX. Cache clearing will solve this trouble.
+If you sometimes use a NPX-utility, you shall store an old version of this package in your cache. And every package update will *not* be seen by NPX. Cache clearing will solve this trouble.
 
 ### For developers
 
