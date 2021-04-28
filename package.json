@@ -1,7 +1,6 @@
 {
-  "private": true,
   "name": "clear-npx-cache",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "main": "lib/index.js",
   "types": "types/index.d.ts",
   "description": "Clears your NPX cache.",
