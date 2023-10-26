@@ -9,7 +9,7 @@ export default function clearCache(): void {
 
     const bar1 = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
 
-    console.log('Starting cleaning ... \n');
+    console.log(' Starting cleaning ... \n');
 
     if (existsSync(npxCacheDirectory)) {
         const subdirectoryNames = readdirSync(npxCacheDirectory);
@@ -34,7 +34,6 @@ export default function clearCache(): void {
         rmSync(subdirectory, { recursive: true });
         }
 
-        // stop the progress bar
         bar1.stop();
 
         console.log('\n Cache cleared successfully! Thanks for using our lib.');
