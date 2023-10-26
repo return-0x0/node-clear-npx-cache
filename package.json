@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "clear-npx-cache",
   "version": "1.1.0",
   "main": "lib/index.js",
@@ -26,7 +25,8 @@
     "lint": "eslint",
     "build:dev": "tsc -p tsconfig.dev.json",
     "clean": "rm -rf lib && rm -rf types",
-    "build:prod": "npm run clean && tsc -p tsconfig.prod.json"
+    "build:prod": "npm run clean && tsc -p tsconfig.prod.json",
+    "prepublish": " npm run lint && npm run build:prod"
   },
   "devDependencies": {
     "@types/cli-progress": "^3.11.4",
