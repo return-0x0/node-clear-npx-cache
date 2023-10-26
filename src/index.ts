@@ -14,24 +14,23 @@ export default function clearCache(): void {
     if (existsSync(npxCacheDirectory)) {
         const subdirectoryNames = readdirSync(npxCacheDirectory);
         const subdirectories = subdirectoryNames.map((subdirectoryName) =>
-        path.join(npxCacheDirectory, subdirectoryName),
-        );
+            path.join(npxCacheDirectory, subdirectoryName));
 
         bar1.start(subdirectories.length, 0);
 
         for (let i = 0; i < subdirectories.length; i += 1) {
-        const subdirectory = subdirectories[i];
-        const packagePath = path.join(subdirectory, 'package.json');
+            const subdirectory = subdirectories[i];
+            const packagePath = path.join(subdirectory, 'package.json');
 
-        bar1.update(i + 1);
+            bar1.update(i + 1);
 
-        if (existsSync(packagePath)) {
-            const package_json = JSON.parse(readFileSync(packagePath).toString());
+            if (existsSync(packagePath)) {
+                const package_json = JSON.parse(readFileSync(packagePath).toString());
 
-            if (package_json.name === 'clear-npx-cache') continue;
-        }
+                if (package_json.name === 'clear-npx-cache') continue;
+            }
 
-        rmSync(subdirectory, { recursive: true });
+            rmSync(subdirectory, { recursive: true });
         }
 
         bar1.stop();
