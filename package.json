@@ -24,15 +24,13 @@
   },
   "scripts": {
     "lint": "eslint",
-    "buildTsDev": "tsc -p tsconfig.dev.json",
-    "buildDev": "npm run buildTsDev",
-    "buildTsProd": "tsc -p tsconfig.prod.json",
-    "buildProd": "npm run buildTsProd",
-    "prepare": "del /q lib && del /q types && npm run buildProd"
+    "build:dev": "tsc -p tsconfig.dev.json",
+    "clean": "rm -rf lib && rm -rf types",
+    "build:prod": "npm run clean && tsc -p tsconfig.prod.json"
   },
   "devDependencies": {
     "@types/cli-progress": "^3.11.4",
-    "@types/node": "^15.0.0",
+    "@types/node": "^20.8.9",
     "@typescript-eslint/parser": "^4.22.0",
     "typescript": "^4.2.4"
   },
